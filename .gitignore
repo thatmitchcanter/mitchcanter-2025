@@ -1,40 +1,48 @@
 # os
+.env
 *~
-.DS_*
-.svn/
-.cvs/
-.hg/
+.DS_Store
+.svn
+.cvs
 *.bak
 *.swp
 Thumbs.db
 
 # node
-./.env
-.env.local
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules/
+.nvmrc
+temp_nvm_script.sh
 
 # composer
-vendor/
+/vendor/
+/vendor/*
+!*/vendor/
+lefthook.yml
+
+# wordpress
+/upgrade/
+/uploads/
+/mu-plugins/*
+/plugins/*
+
 
 # theme
-build/
-/blocks/
-!assets/blocks/
+/themes/*
+!/themes/ollie
 
-#plugins
+# plugins
 /plugins/
+/plugins/*
 
-#themes
-/themes/
+# Query Monitor db file
+/db.php
 
-#uploads
-/uploads/
-
-#tests
-pa11y-ci-report/
-phpcs-report.txt
+# cache
+/cache
+/wflogs
+/wp-rocket-config
