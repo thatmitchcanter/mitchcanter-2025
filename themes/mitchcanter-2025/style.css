@@ -165,3 +165,42 @@ a.more-link {
 		display: none;
 	}
 }
+
+/* Custom Styles */
+.--is-rainbow,
+.--is-rainbow-hover:hover{
+    background: #7dc99f;
+    background: -moz-linear-gradient(-45deg, #7dc99f 0%, #70cbd0 20%, #a471b1 40%, #f27db2 60%, #fcbb80 80%, #f5ed5f 100%);
+    background: -webkit-linear-gradient(-45deg, #7dc99f 0%, #70cbd0 20%, #a471b1 40%, #f27db2 60%, #fcbb80 80%, #f5ed5f 100%);
+    background: linear-gradient(135deg, #7dc99f 0%, #70cbd0 20%, #a471b1 40%, #f27db2 60%, #fcbb80 80%, #f5ed5f 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+.--is-inline{
+	display: inline;
+}
+
+.wp-block-navigation__responsive-container-open svg,
+.wp-block-navigation__responsive-container-close svg { 
+	width: 36px;
+	height: 36px;
+}
+
+.wp-block-navigation__responsive-container-close{ 
+	top: 1.5em;
+}
+
+@media (max-width: 781px) {
+	.wp-block-navigation__responsive-container-close{ 
+		top: 1.75em;
+	}
+}
+
+@media (max-width: 599px) {
+	.wp-block-navigation__responsive-container-close{ 
+		top: .45em;
+	}
+}
