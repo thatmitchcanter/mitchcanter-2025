@@ -33,7 +33,7 @@ lefthook.yml
 
 # theme
 /themes/*
-!/themes/ollie
+!/themes/mitchcanter-2025
 
 # plugins
 /plugins/
