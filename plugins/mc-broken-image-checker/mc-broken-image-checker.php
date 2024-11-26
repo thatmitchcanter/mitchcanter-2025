@@ -4,7 +4,7 @@
  * Plugin Name: Broken Image Checker
  * Description: Checks if the featured images exist and un-attaches them if they return a 404 error.
  * Version: 1.0
- * Author: Your Name
+ * Author: Mitch Canter
  */
 
 // Ensure the file is being accessed through WordPress
