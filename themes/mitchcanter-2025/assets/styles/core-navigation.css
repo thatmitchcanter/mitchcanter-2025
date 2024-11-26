@@ -5,6 +5,10 @@
 	padding: 0;
 }
 
+.wp-block-navigation__container a{
+	font-weight: 1000;
+}
+
 .wp-block-navigation__container .current-menu-item > a,
 .wp-block-navigation__container .has-child button:hover {
 	text-decoration: underline;
