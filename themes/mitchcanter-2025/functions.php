@@ -194,3 +194,56 @@ function template_part_areas( array $areas ) {
 	return $areas;
 }
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
+
+/**
+ * Functions
+ */
+
+ class Rename_Posts_To_Articles {
+    
+    public function __construct() {
+        add_action('init', array($this, 'rename_posts_to_articles'));
+        add_action('admin_menu', array($this, 'rename_post_menu_to_articles'));
+        add_action('admin_init', array($this, 'rename_post_object_to_article'));
+    }
+    
+    public function rename_posts_to_articles() {
+        global $wp_post_types;
+        if (isset($wp_post_types['post'])) {
+            $labels = &$wp_post_types['post']->labels;
+            $labels->name = 'Articles';
+            $labels->singular_name = 'Article';
+            $labels->add_new = 'Add Article';
+            $labels->add_new_item = 'Add New Article';
+            $labels->edit_item = 'Edit Article';
+            $labels->new_item = 'New Article';
+            $labels->view_item = 'View Article';
+            $labels->search_items = 'Search Articles';
+            $labels->not_found = 'No articles found';
+            $labels->not_found_in_trash = 'No articles found in Trash';
+            $labels->all_items = 'All Articles';
+            $labels->menu_name = 'Articles';
+            $labels->name_admin_bar = 'Article';
+        }
+    }
+
+    public function rename_post_menu_to_articles() {
+        global $menu;
+        global $submenu;
+        $menu[5][0] = 'Articles';
+        $submenu['edit.php'][5][0] = 'Articles';
+        $submenu['edit.php'][10][0] = 'Add Article';
+        $submenu['edit.php'][16][0] = 'Article Tags';
+    }
+
+    public function rename_post_object_to_article() {
+        global $wp_post_types;
+        $labels = &$wp_post_types['post']->labels;
+        $labels->name = 'Articles';
+        $labels->singular_name = 'Article';
+        $labels->menu_name = 'Articles';
+        $labels->name_admin_bar = 'Article';
+    }
+}
+
+new Rename_Posts_To_Articles();
