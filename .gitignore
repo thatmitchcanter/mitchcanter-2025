@@ -30,14 +30,12 @@ lefthook.yml
 /mu-plugins/*
 /plugins/*
 
-
 # theme
 /themes/*
 !/themes/mitchcanter-2025
 
 # plugins
-/plugins/
-/plugins/*
+!plugins/mc-broken-image-checker
 
 # Query Monitor db file
 /db.php
